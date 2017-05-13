@@ -1,0 +1,23 @@
+{
+  "name": "<%= project %>",
+  "version": "0.0.0",
+  "description": "<%= description %>",
+  "main": "src/index.js",
+  "scripts": {
+    <% if (airbnb) { %>"lint": "eslint *.js src/**/*.js",<% } %>
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<%= username %>/<%= project %>.git"
+  },
+  "keywords": [],
+  "author": "<%= name %> (https://github.com/<%= username %>)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/<%= username %>/<%= project %>/issues"
+  },
+  "homepage": "https://github.com/<%= username %>/<%= project %>",
+  "dependencies": {},
+  "devDependencies": {}
+}
