@@ -9,7 +9,7 @@ module.exports = {
       role: 'folder:name',
     },
     description: {
-      message: 'How would you descripe the new project?',
+      message: 'How would you describe the new project?',
       default: 'Another fine project',
     },
     name: {
@@ -27,7 +27,7 @@ module.exports = {
       default: year,
     },
     nodeVersion: {
-      message: 'What node verison are you targetting?',
+      message: 'What node version are you targetting?',
       default: '6',
     },
     airbnb: {
