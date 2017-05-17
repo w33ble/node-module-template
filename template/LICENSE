@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright (c) <%= copyrightYear %> <%= name %> (<%= `https://github.com/${username}` %>)
+Copyright (c) <%= new Date().getFullYear() %> <%= name %> (<%= `https://github.com/${username}` %>)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

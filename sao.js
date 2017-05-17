@@ -22,10 +22,6 @@ module.exports = {
       role: 'git:name',
       store: true
     },
-    copyrightYear: {
-      message: 'What copyright year should be used?',
-      default: year,
-    },
     nodeVersion: {
       message: 'What node verison are you targetting?',
       default: '6',
