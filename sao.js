@@ -6,7 +6,7 @@ module.exports = {
     project: {
       required: true,
       message: 'What is the name of the new project?',
-      role: 'folder:name',
+      default: ':folderName:',
     },
     description: {
       message: 'How would you describe the new project?',
@@ -14,12 +14,12 @@ module.exports = {
     },
     name: {
       message: 'What is your name?',
-      role: 'git:name',
+      default: ':gitUser:',
       store: true,
     },
     username: {
       message: 'What is your GitHub username?',
-      role: 'git:name',
+      default: ':gitUser:',
       store: true
     },
     nodeVersion: {
