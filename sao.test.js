@@ -20,3 +20,43 @@ test('copyright has correct info', (t) => {
     t.not(headerText.indexOf('Some User'), -1);
   });
 });
+
+test('no test setup when none is selected', (t) => {
+  return sao.mockPrompt(template, {
+    tests: 'none',
+  })
+  .then((res) => {
+    const pkg = JSON.parse(res.files['package.json'].contents.toString());
+    t.is(pkg.scripts['report-coverage'], undefined);
+    t.is(pkg.scripts['test'], undefined);
+    t.is(pkg.scripts['test:dev'], undefined);
+    t.is(pkg.devDependencies.codecov, undefined);
+    t.is(pkg.devDependencies.nyc, undefined);
+  });
+});
+
+test('coverage reporting when tests are selected', (t) => {
+  return sao.mockPrompt(template, {
+    tests: 'ava',
+  })
+  .then((res) => {
+    const pkg = JSON.parse(res.files['package.json'].contents.toString());
+    t.not(pkg.scripts['report-coverage'], undefined);
+    t.not(pkg.scripts['test'], undefined);
+    t.not(pkg.scripts['test:dev'], undefined);
+    t.not(pkg.devDependencies.codecov, undefined);
+    t.not(pkg.devDependencies.nyc, undefined);
+  });
+});
+
+test('ava is included when selected', (t) => {
+  return sao.mockPrompt(template, {
+    tests: 'ava',
+  })
+  .then((res) => {
+    const pkg = JSON.parse(res.files['package.json'].contents.toString());
+    t.not(pkg.scripts['test'].indexOf('ava'), -1);
+    t.not(pkg.scripts['test:dev'].indexOf('ava'), -1);
+    t.not(pkg.devDependencies.ava, undefined);
+  });
+});
