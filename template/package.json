@@ -3,8 +3,11 @@
   "version": "0.0.0",
   "description": "<%= description %>",
   "main": "src/index.js",
-  "scripts": {
-    <% if (airbnb) { %>"lint": "eslint *.js src/**/*.js",<% } %>
+  "scripts": {<% if (airbnb) { %>
+    "lint": "eslint *.js src/**/*.js",<% } %> <% if (tests !== 'none') { %>
+    "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",<% } %> <% if (tests === 'ava') { %>
+    "test": "nyc ava",
+    "test:dev": "ava --watch",<% } %>
     "start": "node ."
   },
   "repository": {
@@ -19,5 +22,9 @@
   },
   "homepage": "https://github.com/<%= username %>/<%= project %>",
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {<% if (tests === 'ava') { %>
+    "ava": "^0.21.0",<% } %> <% if (tests !== 'none') { %>
+    "codecov": "^2.2.0",
+    "nyc": "^11.0.3"
+  <% } %>}
 }
