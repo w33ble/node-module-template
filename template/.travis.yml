@@ -4,6 +4,10 @@ node_js:
     - "stable"
     - "<%= nodeVersion %>"
 
+cache:
+  directories:
+    - node_modules
+
 notifications:
     email: false
 
