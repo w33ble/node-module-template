@@ -6,7 +6,7 @@ const template = {
   fromPath: resolve('.'),
 };
 
-test('Copyright has correct info', (t) => {
+test('copyright has correct info', (t) => {
   return sao.mockPrompt(template, {
     username: 'someuser',
     name: 'Some User',

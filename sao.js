@@ -31,6 +31,15 @@ module.exports = {
       message: 'Include airbnb eslint rules?',
       default: true,
     },
+    tests: {
+      type: 'list',
+      message: 'Choose your test runner:',
+      choices: [
+        'ava',
+        'none',
+      ],
+      default: 'ava',
+    },
   },
   filters: {
     '.eslintrc': 'airbnb'
