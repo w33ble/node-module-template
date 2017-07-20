@@ -5,7 +5,7 @@
 [![Coverage](https://img.shields.io/codecov/c/github/<%= username %>/<%= project %>.svg)](https://codecov.io/gh/<%= username %>/<%= project %>)<% } %>
 [![npm](https://img.shields.io/npm/v/<%= project %>.svg)](https://www.npmjs.com/package/<%= project %>)
 
-<%= description %>
+<%= description %>.
 
 #### License
 
