@@ -62,3 +62,15 @@ test('ava is included when selected', (t) => {
     t.not(pkg.devDependencies.ava, undefined);
   });
 });
+
+test('includes babel build when selected', (t) => {
+  return sao.mockPrompt(template, {
+    babelcjs: true,
+  })
+  .then((res) => {
+    const pkg = getPkg(res);
+    t.not(pkg.scripts['build'], undefined);
+    t.is(pkg.scripts['test'].match('npm run build').index, 0);
+    t.is(pkg.scripts['test:only'].match('npm run build').index, 0);
+  })
+})
