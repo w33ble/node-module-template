@@ -46,8 +46,9 @@
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.1.0", <% } %><% if (tests !== 'none') { %>
+    "eslint-plugin-react": "^7.1.0",<% } %><% if (tests !== 'none') { %>
     "codecov": "^2.2.0",
-    "nyc": "^11.0.3"
-  <% } %>}
+    "nyc": "^11.0.3"<% } %>
+    "husky": "^0.14.3"
+  }
 }
