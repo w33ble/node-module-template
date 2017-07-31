@@ -31,6 +31,11 @@ module.exports = {
       message: 'Include airbnb eslint rules?',
       default: true,
     },
+    babelcjs: {
+      type: 'confirm',
+      message: 'Include babel commonjs compilation?',
+      default: false,
+    },
     tests: {
       type: 'list',
       message: 'Choose your test runner:',
