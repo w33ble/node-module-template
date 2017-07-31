@@ -2,12 +2,15 @@
   "name": "<%= project %>",
   "version": "0.0.0",
   "description": "<%= description %>",
-  "main": "src/index.js",
+  "main": <% if (babelcjs) { %>"cjs/index.js"<% } else { %>"src/index.js"<% } %>, <% if (babelcjs) { %>
+  "module": "src/index.js",<% } %>
   "scripts": {<% if (airbnb) { %>
     "lint": "eslint *.js src/**/*.js",<% } %> <% if (tests !== 'none') { %>
     "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",<% } %> <% if (tests === 'ava') { %>
-    "test": "nyc ava",
-    "test:dev": "ava --watch",<% } %>
+    "test": "<% if (babelcjs) { %>npm run build && <% } %><% if (airbnb) { %>npm run lint && <% } %>nyc ava",
+    "test:only": "<% if (babelcjs) { %>npm run build && <% } %>ava",
+    "test:dev": "ava --watch",<% } %> <% if (babelcjs) { %>
+    "build": "rimraf cjs && babel --out-dir cjs --ignore __tests__ src", <% } %>
     "start": "node ."
   },
   "repository": {
@@ -20,10 +23,25 @@
   "bugs": {
     "url": "https://github.com/<%= username %>/<%= project %>/issues"
   },
-  "homepage": "https://github.com/<%= username %>/<%= project %>",
+  "homepage": "https://github.com/<%= username %>/<%= project %>", <% if (babelcjs) { %>
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },<% } %>
   "dependencies": {},
   "devDependencies": {<% if (tests === 'ava') { %>
-    "ava": "^0.21.0",<% } %> <% if (tests !== 'none') { %>
+    "ava": "^0.21.0",<% } %><% if (babelcjs) { %>
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "rimraf": "^2.6.1",<% } %><% if (tests !== 'none') { %>
     "codecov": "^2.2.0",
     "nyc": "^11.0.3"
   <% } %>}
