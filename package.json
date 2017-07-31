@@ -1,6 +1,6 @@
 {
   "name": "template-node-module",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "sao template for new node modules",
   "scripts": {
     "test": "ava sao.test.js",
