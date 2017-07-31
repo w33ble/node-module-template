@@ -41,7 +41,12 @@
     "ava": "^0.21.0",<% } %><% if (babelcjs) { %>
     "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.6.0",
-    "rimraf": "^2.6.1",<% } %><% if (tests !== 'none') { %>
+    "rimraf": "^2.6.1",<% } %><% if (airbnb) { %>
+    "eslint": "^3.19.0 || ^4.3.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0", <% } %><% if (tests !== 'none') { %>
     "codecov": "^2.2.0",
     "nyc": "^11.0.3"
   <% } %>}

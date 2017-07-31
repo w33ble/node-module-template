@@ -1,3 +1,1 @@
-const info = require('./info');
-
-info();
+// module code goes here

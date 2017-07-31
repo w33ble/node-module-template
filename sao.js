@@ -53,7 +53,9 @@ module.exports = {
   gitInit: true,
   post({ log, chalk, folderName, isNewFolder }) {
     log.success(`Project bootstrapped successfully into ${chalk.yellow(folderName)}`);
-    const cmd = (isNewFolder) ? `cd "${folderName}"; npm start` : 'npm start';
-    log.info(`Run ${chalk.cyan(cmd)} for additional instructions`);
+
+    if (isNewFolder) {
+      log.info(`Change dir into ${chalk.yellow(folderName)} to get started`);
+    }
   }
 };
