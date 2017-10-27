@@ -1,5 +1,5 @@
 {
-  "name": "template-node-module",
+  "name": "@w33ble/template-node-module",
   "version": "0.2.1",
   "description": "sao template for new node modules",
   "scripts": {
