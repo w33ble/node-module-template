@@ -1,6 +1,6 @@
 {
   "name": "@w33ble/template-node-module",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "sao template for new node modules",
   "scripts": {
     "test": "ava sao.test.js",
