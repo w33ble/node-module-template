@@ -31,10 +31,16 @@ module.exports = {
       message: 'Include airbnb eslint rules?',
       default: true,
     },
-    babelcjs: {
-      type: 'confirm',
-      message: 'Include babel commonjs compilation?',
-      default: false,
+    buildTarget: {
+      type: 'list',
+      message: 'Transpilation target node version:',
+      choices: [
+        'none',
+        '4',
+        '6',
+        '8',
+      ],
+      default: '6',
     },
     tests: {
       type: 'list',
