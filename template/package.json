@@ -2,15 +2,15 @@
   "name": "<%= project %>",
   "version": "0.0.0",
   "description": "<%= description %>",
-  "main": <% if (babelcjs) { %>"cjs/index.js"<% } else { %>"src/index.js"<% } %>, <% if (babelcjs) { %>
+  "main": <% if (buildTarget !== 'none') { %>"lib/index.js"<% } else { %>"src/index.js"<% } %>, <% if (buildTarget !== 'none') { %>
   "module": "src/index.js",<% } %>
   "scripts": {<% if (airbnb) { %>
     "lint": "eslint *.js src/**/*.js",<% } %> <% if (tests !== 'none') { %>
     "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",<% } %> <% if (tests === 'ava') { %>
-    "test": "<% if (babelcjs) { %>npm run build && <% } %><% if (airbnb) { %>npm run lint && <% } %>nyc ava",
-    "test:only": "<% if (babelcjs) { %>npm run build && <% } %>ava",
-    "test:dev": "ava --watch",<% } %> <% if (babelcjs) { %>
-    "build": "rimraf cjs && babel --out-dir cjs --ignore __tests__ src", <% } %>
+    "test": "<% if (buildTarget !== 'none') { %>npm run build && <% } %><% if (airbnb) { %>npm run lint && <% } %>nyc ava",
+    "test:only": "<% if (buildTarget !== 'none') { %>npm run build && <% } %>ava",
+    "test:dev": "ava --watch",<% } %> <% if (buildTarget !== 'none') { %>
+    "build": "rimraf lib && babel --out-dir lib --ignore __tests__ src", <% } %>
     "start": "node ."
   },
   "repository": {
@@ -23,14 +23,14 @@
   "bugs": {
     "url": "https://github.com/<%= username %>/<%= project %>/issues"
   },
-  "homepage": "https://github.com/<%= username %>/<%= project %>", <% if (babelcjs) { %>
+  "homepage": "https://github.com/<%= username %>/<%= project %>", <% if (buildTarget !== 'none') { %>
   "babel": {
     "presets": [
       [
         "env",
         {
           "targets": {
-            "node": "current"
+            "node": "<%= buildTarget %>"
           }
         }
       ]
@@ -38,7 +38,7 @@
   },<% } %>
   "dependencies": {},
   "devDependencies": {<% if (tests === 'ava') { %>
-    "ava": "^0.21.0",<% } %><% if (babelcjs) { %>
+    "ava": "^0.21.0",<% } %><% if (buildTarget !== 'none') { %>
     "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.6.0",
     "rimraf": "^2.6.1",<% } %><% if (airbnb) { %>
