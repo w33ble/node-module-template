@@ -52,9 +52,6 @@ module.exports = {
       default: 'ava',
     },
   },
-  filters: {
-    '.eslintrc': 'airbnb'
-  },
   installDependencies: true,
   gitInit: true,
   post({ log, chalk, folderName, isNewFolder }) {
