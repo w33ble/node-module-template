@@ -1,1 +1,3 @@
-// module code goes here
+module.exports = function() {
+  // module code goes here
+}

@@ -26,6 +26,11 @@ module.exports = {
       message: 'What node version are you targetting?',
       default: '6',
     },
+    esm: {
+      type: 'confirm',
+      message: 'Include runtime es6 module support?',
+      default: true,
+    },
     airbnb: {
       type: 'confirm',
       message: 'Include airbnb eslint rules?',
@@ -40,7 +45,7 @@ module.exports = {
         '6',
         '8',
       ],
-      default: '6',
+      default: 'none',
     },
     tests: {
       type: 'list',
@@ -53,7 +58,9 @@ module.exports = {
     },
   },
   filters: {
-    '.eslintrc': 'airbnb'
+    'src/index.js': '!esm',
+    'src/index.mjs': 'esm',
+    'index.mjs': 'esm',
   },
   installDependencies: true,
   gitInit: true,

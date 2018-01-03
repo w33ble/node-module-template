@@ -1,13 +1,13 @@
 {
   "name": "<%= project %>",
   "version": "0.0.0",
-  "description": "<%= description %>",
-  "main": <% if (buildTarget !== 'none') { %>"lib/index.js"<% } else { %>"src/index.js"<% } %>, <% if (buildTarget !== 'none') { %>
-  "module": "src/index.js",<% } %>
-  "scripts": {<% if (airbnb) { %>
-    "lint": "eslint *.js src/**/*.js",<% } %> <% if (tests !== 'none') { %>
-    "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",<% } %> <% if (tests === 'ava') { %>
-    "test": "<% if (buildTarget !== 'none') { %>npm run build && <% } %><% if (airbnb) { %>npm run lint && <% } %>nyc ava",
+  "description": "<%= description %>",<% if (esm) { %>
+  "module": "index.mjs",<% } else { %>
+  "main": "index.js",<% } %>
+  "scripts": {
+    "lint": "eslint *.js src/**/*.js",<% if (tests !== 'none') { %>
+    "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",<% } if (tests === 'ava') { %>
+    "test": "<% if (buildTarget !== 'none') { %>npm run build && <% } %>npm run lint && nyc ava",
     "test:only": "<% if (buildTarget !== 'none') { %>npm run build && <% } %>ava",
     "test:dev": "ava --watch",<% } %> <% if (buildTarget !== 'none') { %>
     "build": "rimraf lib && babel --out-dir lib --ignore __tests__ src", <% } %>
@@ -36,19 +36,36 @@
       ]
     ]
   },<% } %>
-  "dependencies": {},
+  "lint-staged": {
+    "*.{js,json,css}": ["prettier --write"]
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },<% if (esm) { %>
+  "@std/esm": {
+    "cjs": true
+  },<% } %>
+  "dependencies": {<% if (esm) { %>
+    "@std/esm": "^0.18.0"
+  <% } %>},
   "devDependencies": {<% if (tests === 'ava') { %>
     "ava": "^0.23.0",<% } %><% if (buildTarget !== 'none') { %>
     "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.6.0",
-    "rimraf": "^2.6.1",<% } %><% if (airbnb) { %>
-    "eslint": "^3.19.0 || ^4.3.0",
-    "eslint-config-airbnb": "^16.1.0",
+    "rimraf": "^2.6.1",<% } %>
+    "eslint": "^4.9.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.3.1",
     "eslint-plugin-import": "^2.7.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",<% if (airbnb) { %>
+    "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.1.0",<% } %><% if (tests !== 'none') { %>
+    "eslint-plugin-react": "^7.1.0",<% } if (tests !== 'none') { %>
     "codecov": "^3.0.0",
     "nyc": "^11.2.1",<% } %>
-    "husky": "^0.14.3"
+    "prettier": "^1.9.0"
   }
 }
