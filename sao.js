@@ -26,6 +26,11 @@ module.exports = {
       message: 'What node version are you targetting?',
       default: '6',
     },
+    esm: {
+      type: 'confirm',
+      message: 'Include runtime es6 module support?',
+      default: true,
+    },
     airbnb: {
       type: 'confirm',
       message: 'Include airbnb eslint rules?',

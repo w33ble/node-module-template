@@ -6,7 +6,7 @@
   "module": "src/index.js",<% } %>
   "scripts": {
     "lint": "eslint *.js src/**/*.js",<% if (tests !== 'none') { %>
-    "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",<% } %> <% if (tests === 'ava') { %>
+    "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",<% } if (tests === 'ava') { %>
     "test": "<% if (buildTarget !== 'none') { %>npm run build && <% } %>npm run lint && nyc ava",
     "test:only": "<% if (buildTarget !== 'none') { %>npm run build && <% } %>ava",
     "test:dev": "ava --watch",<% } %> <% if (buildTarget !== 'none') { %>
@@ -43,8 +43,13 @@
     "printWidth": 100,
     "singleQuote": true,
     "trailingComma": "es5"
-  },
-  "dependencies": {},
+  },<% if (esm) { %>
+  "@std/esm": {
+    "cjs": true
+  },<% } %>
+  "dependencies": {<% if (esm) { %>
+    "@std/esm": "^0.18.0"
+  <% } %>},
   "devDependencies": {<% if (tests === 'ava') { %>
     "ava": "^0.23.0",<% } %><% if (buildTarget !== 'none') { %>
     "babel-cli": "^6.24.1",
@@ -58,7 +63,7 @@
     "lint-staged": "^6.0.0",<% if (airbnb) { %>
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.1.0",<% } %><% if (tests !== 'none') { %>
+    "eslint-plugin-react": "^7.1.0",<% } if (tests !== 'none') { %>
     "codecov": "^3.0.0",
     "nyc": "^11.2.1",<% } %>
     "prettier": "^1.9.0"
