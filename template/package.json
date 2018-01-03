@@ -1,9 +1,8 @@
 {
   "name": "<%= project %>",
   "version": "0.0.0",
-  "description": "<%= description %>",
-  "main": <% if (buildTarget !== 'none') { %>"lib/index.js"<% } else { %>"src/index.js"<% } %>, <% if (buildTarget !== 'none') { %>
-  "module": "src/index.js",<% } %>
+  "description": "<%= description %>",<% if (esm) { %>
+  "module": "index.mjs",<% } %>
   "scripts": {
     "lint": "eslint *.js src/**/*.js",<% if (tests !== 'none') { %>
     "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",<% } if (tests === 'ava') { %>

@@ -45,7 +45,7 @@ module.exports = {
         '6',
         '8',
       ],
-      default: '6',
+      default: 'none',
     },
     tests: {
       type: 'list',
@@ -56,6 +56,11 @@ module.exports = {
       ],
       default: 'ava',
     },
+  },
+  filters: {
+    'src/index.js': '!esm',
+    'src/index.mjs': 'esm',
+    'index.mjs': 'esm',
   },
   installDependencies: true,
   gitInit: true,
