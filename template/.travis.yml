@@ -1,8 +1,8 @@
 language: node_js
 
 node_js:
-    - "stable"
-    - "<%= nodeVersion %>"
+  - "stable"
+  - "<%= nodeVersion %>"
 
 cache:
   directories:
@@ -18,5 +18,6 @@ branches:
     - master
     - /^v[0-9].*$/
 <% if (tests !== 'none') { %>
+
 after_success:
   - npm run report-coverage -- -e TRAVIS_NODE_VERSION<% } %>
