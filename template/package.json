@@ -5,7 +5,7 @@
   "module": "index.mjs",<% } else { %>
   "main": "index.js",<% } %>
   "scripts": {
-    "lint": "eslint *.js src/**/*.js",<% if (tests !== 'none') { %>
+    "lint": "eslint \"*.js\" \"src/**/*.js\" \"src/**/*.mjs\"",<% if (tests !== 'none') { %>
     "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",<% } if (tests === 'ava') { %>
     "test": "<% if (buildTarget !== 'none') { %>npm run build && <% } %>npm run lint && nyc ava",
     "test:only": "<% if (buildTarget !== 'none') { %>npm run build && <% } %>ava",
