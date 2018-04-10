@@ -19,6 +19,11 @@
     "url": "git+https://github.com/<%= username %>/<%= project %>.git"
   },
   "keywords": [],
+  "files": [
+    "src/",
+    "index.js",
+    "index.mjs"
+  ],
   "author": "<%= name %> (https://github.com/<%= username %>)",
   "license": "MIT",
   "bugs": {

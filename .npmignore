@@ -1,9 +1,6 @@
 .env
 .DS_Store
 .*.swp
-yarn.lock
+coverage.lcov
 coverage
 .nyc_output
-__tests__/
-*.test.js
-*.test.jsx
