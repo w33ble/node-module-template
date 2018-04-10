@@ -2,10 +2,11 @@
   "name": "<%= project %>",
   "version": "0.0.0",
   "description": "<%= description %>",<% if (esm) { %>
+  "main": "index",
   "module": "index.mjs",<% } else { %>
   "main": "index.js",<% } %>
   "scripts": {
-    "lint": "eslint \"*.js\" \"src/**/*.js\" \"src/**/*.mjs\"",<% if (tests !== 'none') { %>
+    "lint": "eslint \"*.{js,mjs}\" \"src/**/*.{js,mjs}\"",<% if (tests !== 'none') { %>
     "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",<% } if (tests === 'ava') { %>
     "test": "<% if (buildTarget !== 'none') { %>npm run build && <% } %>npm run lint && nyc ava",
     "test:only": "<% if (buildTarget !== 'none') { %>npm run build && <% } %>ava",
@@ -37,7 +38,7 @@
     ]
   },<% } %>
   "lint-staged": {
-    "*.{js,json,css}": ["prettier --write"]
+    "*.{js,mjs,json,css}": ["prettier --write"]
   },
   "prettier": {
     "printWidth": 100,
