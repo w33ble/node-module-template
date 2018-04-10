@@ -45,11 +45,11 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },<% if (esm) { %>
-  "@std/esm": {
+  "esm": {
     "cjs": true
   },<% } %>
   "dependencies": {<% if (esm) { %>
-    "@std/esm": "^0.18.0"
+    "esm": "^^3.0.17"
   <% } %>},
   "devDependencies": {<% if (tests === 'ava') { %>
     "ava": "^0.23.0",<% } %><% if (buildTarget !== 'none') { %>
