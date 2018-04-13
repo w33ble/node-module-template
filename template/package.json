@@ -43,7 +43,9 @@
     ]
   },<% } %>
   "lint-staged": {
-    "*.{js,mjs,json,css}": ["prettier --write"]
+    "*.{js,mjs,json,css}": [
+      "prettier --write"
+    ]
   },
   "prettier": {
     "printWidth": 100,
@@ -54,7 +56,7 @@
     "cjs": true
   },<% } %>
   "dependencies": {<% if (esm) { %>
-    "esm": "^^3.0.17"
+    "esm": "^3.0.17"
   <% } %>},
   "devDependencies": {<% if (tests === 'ava') { %>
     "ava": "^0.23.0",<% } %><% if (buildTarget !== 'none') { %>
