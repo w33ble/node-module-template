@@ -1,41 +1,27 @@
 ### Changelog
 
 #### [v0.4.2](https://github.com/w33ble/template-node-module/compare/v0.4.1...v0.4.2) (17 April 2018)
-- chore: add changelog [`77d3030`](https://github.com/w33ble/template-node-module/commit/77d30302594fb8d40057e16327ea953e1ef245c4)
-- chore: fix lib ignore, use files prop [`0472039`](https://github.com/w33ble/template-node-module/commit/0472039523f206669cc3ff262f885b512956fdc7)
 - fix: esm version [`bda3548`](https://github.com/w33ble/template-node-module/commit/bda354872a28f9217d07a41ca293f7d6aa62d128)
-- chore: clean up mjs use [`31d0076`](https://github.com/w33ble/template-node-module/commit/31d0076ad3ce3ab9f54d264d2a08588789ba4652)
 - fix: switch to esm [`ff1167e`](https://github.com/w33ble/template-node-module/commit/ff1167ecbaa39469ca2369b18f278c45a17f49fc)
-- chore: add .env to gitignore [`740440b`](https://github.com/w33ble/template-node-module/commit/740440bebe2b55c5040944586120b71fc5735944)
 - fix: esm use in main js file [`d12961c`](https://github.com/w33ble/template-node-module/commit/d12961c2f3ffd502a8567adc548c35a7fd744289)
-- chore: bump lint-staged [`aaf5be3`](https://github.com/w33ble/template-node-module/commit/aaf5be37d92c0d8d98add616ef3fd3dbfa71db37)
 
 #### [v0.4.1](https://github.com/w33ble/template-node-module/compare/v0.4.0...v0.4.1) (28 March 2018)
-- chore: tweak travis config formatting [`d64153c`](https://github.com/w33ble/template-node-module/commit/d64153c77ffb3f63263dd7253b10bddd372153a6)
 - fix: send email notifications on first failure [`596789d`](https://github.com/w33ble/template-node-module/commit/596789d7d6f2662ea9dab6dde28fea1ce1602c0a)
 - fix: linting pattern, add mjs checking [`9db67d7`](https://github.com/w33ble/template-node-module/commit/9db67d70c96ea0b7eb5a70914dd3d10775fbcc48)
 - fix: set travis badge to shields.io [`d906d06`](https://github.com/w33ble/template-node-module/commit/d906d069855224567cc89b5e6f9677a1f37246ed)
-- chore: make package private [`6424eae`](https://github.com/w33ble/template-node-module/commit/6424eae755d8ecf8826595ffa2a530e00115d5c8)
 
 #### [v0.4.0](https://github.com/w33ble/template-node-module/compare/v0.3.0...v0.4.0) (2 January 2018)
 - Feat/prettier and esm [`#4`](https://github.com/w33ble/template-node-module/pull/4)
 
-#### [v0.3.0](https://github.com/w33ble/template-node-module/compare/v0.2.1...v0.3.0) (27 October 2017)
+#### [v0.3.0](https://github.com/w33ble/template-node-module/compare/v0.2.0...v0.3.0) (27 October 2017)
 - Feat: Support babel targets [`#3`](https://github.com/w33ble/template-node-module/pull/3)
-- chore: upgrade dependencies [`9924a6b`](https://github.com/w33ble/template-node-module/commit/9924a6bee0f5dc7623a6d9502d4355256ccd72c4)
-- chore: rename package [`eef02c1`](https://github.com/w33ble/template-node-module/commit/eef02c1a7ab81062a79e467317d7204d475edbb2)
-- fix: add yarn error to gitignore [`5053d7b`](https://github.com/w33ble/template-node-module/commit/5053d7bca2f250ea8f19036bbc993ada8b502c45)
-
-#### [v0.2.1](https://github.com/w33ble/template-node-module/compare/v0.2.0...v0.2.1) (15 August 2017)
-- chore: version bump to 0.2.1 [`5b1b4d7`](https://github.com/w33ble/template-node-module/commit/5b1b4d713930c377453c6caebe38d6ab43fdee29)
 - fix: missing trailing comma [`99d925a`](https://github.com/w33ble/template-node-module/commit/99d925a6398afcaa8a5b93ebb3baaf51b55d6c35)
+- fix: add yarn error to gitignore [`5053d7b`](https://github.com/w33ble/template-node-module/commit/5053d7bca2f250ea8f19036bbc993ada8b502c45)
 - feat: add stability badge to readme [`2b4ce1f`](https://github.com/w33ble/template-node-module/commit/2b4ce1f6d30859e0d3f7b97adf598ae6243253f7)
 
 #### [v0.2.0](https://github.com/w33ble/template-node-module/compare/v0.1.0...v0.2.0) (31 July 2017)
 - feat: add babel stuff to package.json [`3ad494e`](https://github.com/w33ble/template-node-module/commit/3ad494e422c6bd593ec3e8aab9a64b36560ba4c7)
 - feat: add airbnb stuff to package [`9298463`](https://github.com/w33ble/template-node-module/commit/92984633221b19b9a00e83dff7ff6e3e37a0d93b)
-- test: add tests for babel build [`49f671b`](https://github.com/w33ble/template-node-module/commit/49f671bf054e7ef76772559dbcd0ca7a89c48ed0)
-- chore: make pkg reading helper [`e704bba`](https://github.com/w33ble/template-node-module/commit/e704bba5e1616d4583ac7552846e811abdddc9a0)
 - fix: always install husky [`90c722f`](https://github.com/w33ble/template-node-module/commit/90c722f8d59eab30f3457c667e45e8ad139eac3f)
 - feat: ask about adding babel build step [`c5c6e68`](https://github.com/w33ble/template-node-module/commit/c5c6e68628613d5cb5867ee9500f598e7db063ee)
 - feat: move description above shields [`843c0fd`](https://github.com/w33ble/template-node-module/commit/843c0fd34d310a9615ee45e032c7327dfb813a24)
