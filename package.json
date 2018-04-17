@@ -1,6 +1,6 @@
 {
   "name": "@w33ble/template-node-module",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "private": true,
   "description": "sao template for new node modules",
   "scripts": {

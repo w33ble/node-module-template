@@ -1,5 +1,15 @@
 ### Changelog
 
+#### [v0.4.2](https://github.com/w33ble/template-node-module/compare/v0.4.1...v0.4.2) (17 April 2018)
+- chore: add changelog [`77d3030`](https://github.com/w33ble/template-node-module/commit/77d30302594fb8d40057e16327ea953e1ef245c4)
+- chore: fix lib ignore, use files prop [`0472039`](https://github.com/w33ble/template-node-module/commit/0472039523f206669cc3ff262f885b512956fdc7)
+- fix: esm version [`bda3548`](https://github.com/w33ble/template-node-module/commit/bda354872a28f9217d07a41ca293f7d6aa62d128)
+- chore: clean up mjs use [`31d0076`](https://github.com/w33ble/template-node-module/commit/31d0076ad3ce3ab9f54d264d2a08588789ba4652)
+- fix: switch to esm [`ff1167e`](https://github.com/w33ble/template-node-module/commit/ff1167ecbaa39469ca2369b18f278c45a17f49fc)
+- chore: add .env to gitignore [`740440b`](https://github.com/w33ble/template-node-module/commit/740440bebe2b55c5040944586120b71fc5735944)
+- fix: esm use in main js file [`d12961c`](https://github.com/w33ble/template-node-module/commit/d12961c2f3ffd502a8567adc548c35a7fd744289)
+- chore: bump lint-staged [`aaf5be3`](https://github.com/w33ble/template-node-module/commit/aaf5be37d92c0d8d98add616ef3fd3dbfa71db37)
+
 #### [v0.4.1](https://github.com/w33ble/template-node-module/compare/v0.4.0...v0.4.1) (28 March 2018)
 - chore: tweak travis config formatting [`d64153c`](https://github.com/w33ble/template-node-module/commit/d64153c77ffb3f63263dd7253b10bddd372153a6)
 - fix: send email notifications on first failure [`596789d`](https://github.com/w33ble/template-node-module/commit/596789d7d6f2662ea9dab6dde28fea1ce1602c0a)
