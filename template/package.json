@@ -12,6 +12,7 @@
     "test:only": "<% if (buildTarget !== 'none') { %>npm run build && <% } %>ava",
     "test:dev": "ava --watch",<% } %> <% if (buildTarget !== 'none') { %>
     "build": "rimraf lib && babel --out-dir lib --ignore __tests__ src", <% } %>
+    "postversion": "auto-changelog",
     "start": "node ."
   },
   "repository": {
@@ -29,7 +30,13 @@
   "bugs": {
     "url": "https://github.com/<%= username %>/<%= project %>/issues"
   },
-  "homepage": "https://github.com/<%= username %>/<%= project %>", <% if (buildTarget !== 'none') { %>
+  "homepage": "https://github.com/<%= username %>/<%= project %>",
+  "auto-changelog": {
+    "output": "CHANGELOG.md",
+    "template": ".changelog_template.hbs",
+    "ignoreCommitPattern": "(chore|test):",
+    "commitLimit": false
+  }, <% if (buildTarget !== 'none') { %>
   "babel": {
     "presets": [
       [
@@ -58,7 +65,8 @@
   "dependencies": {<% if (esm) { %>
     "esm": "^3.0.17"
   <% } %>},
-  "devDependencies": {<% if (tests === 'ava') { %>
+  "devDependencies": {
+    "auto-changelog": "^1.4.6",<% if (tests === 'ava') { %>
     "ava": "^0.23.0",<% } %><% if (buildTarget !== 'none') { %>
     "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.6.0",
