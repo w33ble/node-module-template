@@ -5,7 +5,9 @@
   "description": "sao template for new node modules",
   "scripts": {
     "test": "ava sao.test.js",
-    "test:dev": "ava -w sao.test.js"
+    "test:dev": "ava -w sao.test.js",
+    "changelog": "auto-changelog",
+    "postversion": "npm run changelog"
   },
   "repository": {
     "type": "git",
@@ -17,9 +19,15 @@
   "bugs": {
     "url": "https://github.com/w33ble/template-node-module/issues"
   },
+  "auto-changelog": {
+    "output": "CHANGELOG.md",
+    "template": "cltemplate.hbs",
+    "commitLimit": false
+  },
   "homepage": "https://github.com/w33ble/template-node-module",
   "dependencies": {},
   "devDependencies": {
+    "auto-changelog": "^1.4.6",
     "ava": "^0.19.1",
     "sao": "^0.19.3"
   }
