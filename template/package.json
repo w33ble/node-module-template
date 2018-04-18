@@ -12,7 +12,7 @@
     "test:only": "<% if (buildTarget !== 'none') { %>npm run build && <% } %>ava",
     "test:dev": "ava --watch",<% } %> <% if (buildTarget !== 'none') { %>
     "build": "rimraf lib && babel --out-dir lib --ignore __tests__ src", <% } %>
-    "postversion": "auto-changelog",
+    "version": "auto-changelog -p && git add CHANGELOG.md",
     "start": "node ."
   },
   "repository": {
