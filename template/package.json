@@ -13,7 +13,7 @@
     "test:dev": "ava --watch",<% } %> <% if (buildTarget !== 'none') { %>
     "build": "rimraf lib && babel --out-dir lib --ignore __tests__ src", <% } %>
     "precommit": "lint-staged",
-    "version": "auto-changelog -p && git add CHANGELOG.md",
+    "version": "auto-changelog -p && auto-authors && git add CHANGELOG.md AUTHORS.md",
     "start": "node ."
   },
   "repository": {
@@ -67,6 +67,7 @@
     "esm": "^3.0.17"
   <% } %>},
   "devDependencies": {
+    "auto-authors": "^0.1.1",
     "auto-changelog": "^1.4.6",<% if (tests === 'ava') { %>
     "ava": "^0.23.0",<% } %><% if (buildTarget !== 'none') { %>
     "babel-cli": "^6.24.1",
