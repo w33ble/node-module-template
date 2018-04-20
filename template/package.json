@@ -24,7 +24,9 @@
   "files": [
     "src/",
     "index.js",
-    "index.mjs"
+    "index.mjs",
+    "CHANGELOG.md",
+    "AUTHORS.md"
   ],
   "author": "<%= name %> (https://github.com/<%= username %>)",
   "license": "MIT",
