@@ -51,9 +51,8 @@
     ]
   },<% } %>
   "lint-staged": {
-    "*.{js,mjs,json,css}": [
-      "eslint --fix"
-    ]
+    "*.{js,mjs}": ["eslint --fix"],
+    "*.{js,mjs,json,css}": ["prettier --write"]
   },
   "prettier": {
     "printWidth": 100,
