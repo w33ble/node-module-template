@@ -12,6 +12,7 @@
     "test:only": "<% if (buildTarget !== 'none') { %>npm run build && <% } %>ava",
     "test:dev": "ava --watch",<% } %> <% if (buildTarget !== 'none') { %>
     "build": "rimraf lib && babel --out-dir lib --ignore __tests__ src", <% } %>
+    "precommit": "lint-staged",
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "start": "node ."
   },
@@ -51,7 +52,7 @@
   },<% } %>
   "lint-staged": {
     "*.{js,mjs,json,css}": [
-      "prettier --write"
+      "eslint --fix"
     ]
   },
   "prettier": {
