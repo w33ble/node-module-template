@@ -1,5 +1,8 @@
 ### Changelog
 
+#### [v1.0.1](https://github.com/w33ble/template-node-module/compare/v1.0.0...v1.0.1) (19 April 2018)
+- fix: don&#x27;t lint non-js files [`f886a72`](https://github.com/w33ble/template-node-module/commit/f886a72ecb24d60382c5e440a548706b3ff1a370)
+
 ### [v1.0.0](https://github.com/w33ble/template-node-module/compare/v0.4.2...v1.0.0) (19 April 2018)
 - feat: add auto-changelog and npm script [`faf32fd`](https://github.com/w33ble/template-node-module/commit/faf32fd9e5f2937da0b872d4bf0b3c55f8c739cc)
 - feat: create changelog on version bump [`9fbb9d3`](https://github.com/w33ble/template-node-module/commit/9fbb9d305e51426824ae1311250ad1e2a1ac3208)
