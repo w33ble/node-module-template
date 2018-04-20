@@ -1,5 +1,11 @@
 ### Changelog
 
+### [v1.0.0](https://github.com/w33ble/template-node-module/compare/v0.4.2...v1.0.0) (19 April 2018)
+- feat: add auto-changelog and npm script [`faf32fd`](https://github.com/w33ble/template-node-module/commit/faf32fd9e5f2937da0b872d4bf0b3c55f8c739cc)
+- feat: create changelog on version bump [`9fbb9d3`](https://github.com/w33ble/template-node-module/commit/9fbb9d305e51426824ae1311250ad1e2a1ac3208)
+- feat: add auto-authors [`e8c41e8`](https://github.com/w33ble/template-node-module/commit/e8c41e82c62b078ad0193fdb838a6144fba1fbd6)
+- fix: add precommit hook for lint-staged [`7200311`](https://github.com/w33ble/template-node-module/commit/72003114a730ad92b385295e4efb7428b185b568)
+
 #### [v0.4.2](https://github.com/w33ble/template-node-module/compare/v0.4.1...v0.4.2) (17 April 2018)
 - fix: esm version [`bda3548`](https://github.com/w33ble/template-node-module/commit/bda354872a28f9217d07a41ca293f7d6aa62d128)
 - fix: switch to esm [`ff1167e`](https://github.com/w33ble/template-node-module/commit/ff1167ecbaa39469ca2369b18f278c45a17f49fc)
