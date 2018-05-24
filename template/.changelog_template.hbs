@@ -17,7 +17,7 @@
     - {{commit.subject}}{{#each fixes}}{{#if href}} [`#{{id}}`]({{href}}){{/if}}{{/each}}
   {{/each}}
   {{#each commits}}
-    - {{subject}}{{#if href}} [`{{shorthash}}`]({{href}}){{/if}}
+    - {{#matches message "BREAKING CHANGE"}}**Breaking:** {{/matches}}{{subject}}{{#if href}} [`{{shorthash}}`]({{href}}){{/if}}
   {{/each}}
 
 {{/each}}

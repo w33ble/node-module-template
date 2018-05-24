@@ -36,6 +36,7 @@
   "homepage": "https://github.com/<%= username %>/<%= project %>",
   "auto-changelog": {
     "output": "CHANGELOG.md",
+    "breakingPattern": "BREAKING CHANGE:",
     "template": ".changelog_template.hbs",
     "ignoreCommitPattern": "(chore|test):",
     "commitLimit": false
@@ -69,7 +70,7 @@
   <% } %>},
   "devDependencies": {
     "auto-authors": "^0.1.1",
-    "auto-changelog": "^1.4.6",<% if (tests === 'ava') { %>
+    "auto-changelog": "^1.5.0",<% if (tests === 'ava') { %>
     "ava": "^0.23.0",<% } %><% if (buildTarget !== 'none') { %>
     "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.6.0",
