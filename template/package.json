@@ -7,10 +7,17 @@
   "main": "index.js",<% } %>
   "scripts": {
     "lint": "eslint \"*.{js,mjs}\" \"src/**/*.{js,mjs}\"",<% if (tests !== 'none') { %>
-    "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",<% } if (tests === 'ava') { %>
-    "test": "<% if (buildTarget !== 'none') { %>npm run build && <% } %>npm run lint && nyc ava",
-    "test:only": "<% if (buildTarget !== 'none') { %>npm run build && <% } %>ava",
-    "test:dev": "ava --watch",<% } %> <% if (buildTarget !== 'none') { %>
+    "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",<% } if (tests === 'ava' && buildTarget !== 'none') { %>
+    "test": "npm run build && npm run lint && nyc ava",
+    "test:only": "npm run build && ava",
+    "test:dev": "ava --watch",<% } if (tests === 'ava' && buildTarget === 'none') { %>
+    "test": "npm run lint && nyc ava",
+    "test:only": "ava",
+    "test:dev": "ava --watch",<% } if (tests === 'tapped' && buildTarget !== 'none') { %>
+    "test": "npm run build && npm run lint && node <% if (esm) { %>-r esm test/index.mjs<% } else { %>test/index.js<% } %>",
+    "test:only": "npm run build && <% if (esm) { %>-r esm test/index.mjs<% } else { %>test/index.js<% } %>",<% } if (tests === 'tapped' && buildTarget === 'none') { %>
+    "test": "npm run lint && node <% if (esm) { %>-r esm test/index.mjs<% } else { %>test/index.js<% } %>",
+    "test:only": "node <% if (esm) { %>-r esm test/index.mjs<% } else { %>test/index.js<% } %>",<% } if (buildTarget !== 'none') { %>
     "build": "rimraf lib && babel --out-dir lib --ignore __tests__ src", <% } %>
     "precommit": "lint-staged",
     "version": "auto-changelog -p && auto-authors && git add CHANGELOG.md AUTHORS.md",
@@ -70,8 +77,9 @@
   <% } %>},
   "devDependencies": {
     "auto-authors": "^0.1.1",
-    "auto-changelog": "^1.5.0",<% if (tests === 'ava') { %>
-    "ava": "^0.23.0",<% } %><% if (buildTarget !== 'none') { %>
+    "auto-changelog": "^1.7.0",<% if (tests === 'ava') { %>
+    "ava": "^0.23.0",<% } %><% if (tests === 'tapped') { %>
+    "tapped": "^0.1.0",<% } %><% if (buildTarget !== 'none') { %>
     "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.6.0",
     "rimraf": "^2.6.1",<% } %>
