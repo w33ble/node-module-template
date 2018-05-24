@@ -1,5 +1,11 @@
 ### Changelog
 
+#### [v1.1.0](https://github.com/w33ble/template-node-module/compare/v1.0.1...v1.1.0) (23 May 2018)
+- feat: add tapped testing choice [`e812769`](https://github.com/w33ble/template-node-module/commit/e81276917753be6fe913ef9ec3f104554d4251ff)
+- feat: enforce import order [`68e5327`](https://github.com/w33ble/template-node-module/commit/68e53279fbeb5e120474809c0b98f3b7f6ab7835)
+- feat: bump auto-changelog, add breaking message [`1b43d69`](https://github.com/w33ble/template-node-module/commit/1b43d69f34188e85c50d5e01c643bb563ddb4311)
+- fix: include changelog and authors in build [`3df9a4b`](https://github.com/w33ble/template-node-module/commit/3df9a4bb218e9dc28de20745f4a67be02316df52)
+
 #### [v1.0.1](https://github.com/w33ble/template-node-module/compare/v1.0.0...v1.0.1) (19 April 2018)
 - fix: don&#x27;t lint non-js files [`f886a72`](https://github.com/w33ble/template-node-module/commit/f886a72ecb24d60382c5e440a548706b3ff1a370)
 
