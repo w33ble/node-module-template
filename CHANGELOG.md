@@ -1,5 +1,9 @@
 ### Changelog
 
+#### [v1.1.1](https://github.com/w33ble/template-node-module/compare/v1.1.0...v1.1.1) (29 May 2018)
+- fix: don&#x27;t use prettier on package files [`d1915ac`](https://github.com/w33ble/template-node-module/commit/d1915ac50d8df4a2c003b5e27ed25458531eae3a)
+- fix: quotes on eslint command [`3e05fbf`](https://github.com/w33ble/template-node-module/commit/3e05fbfcd630f6533e992ff6be7eb757db65cfcb)
+
 #### [v1.1.0](https://github.com/w33ble/template-node-module/compare/v1.0.1...v1.1.0) (23 May 2018)
 - feat: add tapped testing choice [`e812769`](https://github.com/w33ble/template-node-module/commit/e81276917753be6fe913ef9ec3f104554d4251ff)
 - feat: enforce import order [`68e5327`](https://github.com/w33ble/template-node-module/commit/68e53279fbeb5e120474809c0b98f3b7f6ab7835)
