@@ -6,7 +6,7 @@
   "module": "index.mjs",<% } else { %>
   "main": "index.js",<% } %>
   "scripts": {
-    "lint": "eslint \"*.{js,mjs}\" \"src/**/*.{js,mjs}\"",<% if (tests !== 'none') { %>
+    "lint": "eslint '*.{js,mjs}' 'src/**/*.{js,mjs}'",<% if (tests !== 'none') { %>
     "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",<% } if (tests === 'ava' && buildTarget !== 'none') { %>
     "test": "npm run build && npm run lint && nyc ava",
     "test:only": "npm run build && ava",
