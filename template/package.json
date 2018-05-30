@@ -20,7 +20,7 @@
     "test:only": "node <% if (esm) { %>-r esm test/index.mjs<% } else { %>test/index.js<% } %>",<% } if (buildTarget !== 'none') { %>
     "build": "rimraf lib && babel --out-dir lib --ignore __tests__ src", <% } %>
     "precommit": "lint-staged",
-    "version": "auto-changelog -p && auto-authors && git add CHANGELOG.md AUTHORS.md",
+    "version": "npm-auto-version",
     "start": "node ."
   },
   "repository": {
@@ -40,14 +40,7 @@
   "bugs": {
     "url": "https://github.com/<%= username %>/<%= project %>/issues"
   },
-  "homepage": "https://github.com/<%= username %>/<%= project %>",
-  "auto-changelog": {
-    "output": "CHANGELOG.md",
-    "breakingPattern": "BREAKING CHANGE:",
-    "template": ".changelog_template.hbs",
-    "ignoreCommitPattern": "(chore|test):",
-    "commitLimit": false
-  }, <% if (buildTarget !== 'none') { %>
+  "homepage": "https://github.com/<%= username %>/<%= project %>",<% if (buildTarget !== 'none') { %>
   "babel": {
     "presets": [
       [
@@ -85,8 +78,7 @@
     "esm": "^3.0.17"
   <% } %>},
   "devDependencies": {
-    "auto-authors": "^0.1.1",
-    "auto-changelog": "^1.7.0",<% if (tests === 'ava') { %>
+    "@w33ble/npm-auto-tools": "*",<% if (tests === 'ava') { %>
     "ava": "^0.23.0",<% } %><% if (tests === 'tapped') { %>
     "tapped": "^0.1.0",<% } %><% if (buildTarget !== 'none') { %>
     "babel-cli": "^6.24.1",
