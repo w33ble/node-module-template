@@ -6,7 +6,7 @@
   "scripts": {
     "test": "ava sao.test.js",
     "test:dev": "ava -w sao.test.js",
-    "version": "auto-changelog -p && git add CHANGELOG.md"
+    "version": "npm-auto-version"
   },
   "repository": {
     "type": "git",
@@ -18,16 +18,10 @@
   "bugs": {
     "url": "https://github.com/w33ble/template-node-module/issues"
   },
-  "auto-changelog": {
-    "output": "CHANGELOG.md",
-    "template": ".changelog_template.hbs",
-    "ignoreCommitPattern": "(chore|test):",
-    "commitLimit": false
-  },
   "homepage": "https://github.com/w33ble/template-node-module",
   "dependencies": {},
   "devDependencies": {
-    "auto-changelog": "^1.4.6",
+    "@w33ble/npm-auto-tools": "*",
     "ava": "^0.19.1",
     "sao": "^0.19.3"
   }

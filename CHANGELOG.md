@@ -4,16 +4,16 @@
 - fix: don&#x27;t use prettier on package files [`d1915ac`](https://github.com/w33ble/template-node-module/commit/d1915ac50d8df4a2c003b5e27ed25458531eae3a)
 - fix: quotes on eslint command [`3e05fbf`](https://github.com/w33ble/template-node-module/commit/3e05fbfcd630f6533e992ff6be7eb757db65cfcb)
 
-#### [v1.1.0](https://github.com/w33ble/template-node-module/compare/v1.0.1...v1.1.0) (23 May 2018)
+#### [v1.1.0](https://github.com/w33ble/template-node-module/compare/v1.0.1...v1.1.0) (24 May 2018)
 - feat: add tapped testing choice [`e812769`](https://github.com/w33ble/template-node-module/commit/e81276917753be6fe913ef9ec3f104554d4251ff)
 - feat: enforce import order [`68e5327`](https://github.com/w33ble/template-node-module/commit/68e53279fbeb5e120474809c0b98f3b7f6ab7835)
 - feat: bump auto-changelog, add breaking message [`1b43d69`](https://github.com/w33ble/template-node-module/commit/1b43d69f34188e85c50d5e01c643bb563ddb4311)
 - fix: include changelog and authors in build [`3df9a4b`](https://github.com/w33ble/template-node-module/commit/3df9a4bb218e9dc28de20745f4a67be02316df52)
 
-#### [v1.0.1](https://github.com/w33ble/template-node-module/compare/v1.0.0...v1.0.1) (19 April 2018)
+#### [v1.0.1](https://github.com/w33ble/template-node-module/compare/v1.0.0...v1.0.1) (20 April 2018)
 - fix: don&#x27;t lint non-js files [`f886a72`](https://github.com/w33ble/template-node-module/commit/f886a72ecb24d60382c5e440a548706b3ff1a370)
 
-### [v1.0.0](https://github.com/w33ble/template-node-module/compare/v0.4.2...v1.0.0) (19 April 2018)
+### [v1.0.0](https://github.com/w33ble/template-node-module/compare/v0.4.2...v1.0.0) (20 April 2018)
 - feat: add auto-changelog and npm script [`faf32fd`](https://github.com/w33ble/template-node-module/commit/faf32fd9e5f2937da0b872d4bf0b3c55f8c739cc)
 - feat: create changelog on version bump [`9fbb9d3`](https://github.com/w33ble/template-node-module/commit/9fbb9d305e51426824ae1311250ad1e2a1ac3208)
 - feat: add auto-authors [`e8c41e8`](https://github.com/w33ble/template-node-module/commit/e8c41e82c62b078ad0193fdb838a6144fba1fbd6)
@@ -29,7 +29,7 @@
 - fix: linting pattern, add mjs checking [`9db67d7`](https://github.com/w33ble/template-node-module/commit/9db67d70c96ea0b7eb5a70914dd3d10775fbcc48)
 - fix: set travis badge to shields.io [`d906d06`](https://github.com/w33ble/template-node-module/commit/d906d069855224567cc89b5e6f9677a1f37246ed)
 
-#### [v0.4.0](https://github.com/w33ble/template-node-module/compare/v0.3.0...v0.4.0) (2 January 2018)
+#### [v0.4.0](https://github.com/w33ble/template-node-module/compare/v0.3.0...v0.4.0) (3 January 2018)
 - Feat/prettier and esm [`#4`](https://github.com/w33ble/template-node-module/pull/4)
 
 #### [v0.3.0](https://github.com/w33ble/template-node-module/compare/v0.2.0...v0.3.0) (27 October 2017)
