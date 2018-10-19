@@ -142,3 +142,25 @@ test("includes babel build when selected", t => {
       t.not(pkg.scripts["test:only"].indexOf("npm run build"), -1);
     });
 });
+
+test("includes Dockerfile when selected", t => {
+  return sao
+    .mockPrompt(template, {
+      docker: true,
+    })
+    .then(res => {
+      t.truthy(res.files["Dockerfile"]);
+      t.truthy(res.files[".dockerignore"]);
+    });
+})
+
+test("skips Dockerfile when not selected", t => {
+  return sao
+    .mockPrompt(template, {
+      docker: false,
+    })
+    .then(res => {
+      t.is(res.files["Dockerfile"], undefined);
+      t.is(res.files[".dockerignore"], undefined);
+    });
+})
