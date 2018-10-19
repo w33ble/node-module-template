@@ -1,5 +1,11 @@
 ### Changelog
 
+#### [v1.3.0](https://github.com/w33ble/template-node-module/compare/v1.2.0...v1.3.0) (19 October 2018)
+- Feat: Add Dockerfile to output [`#6`](https://github.com/w33ble/template-node-module/pull/6)
+
+#### [v1.2.0](https://github.com/w33ble/template-node-module/compare/v1.1.1...v1.2.0) (30 May 2018)
+- feat: replace auto-changelog and auto-authors [`75dca8e`](https://github.com/w33ble/template-node-module/commit/75dca8e1bd926744fa74504c8905bab3a1c6895b)
+
 #### [v1.1.1](https://github.com/w33ble/template-node-module/compare/v1.1.0...v1.1.1) (29 May 2018)
 - fix: don&#x27;t use prettier on package files [`d1915ac`](https://github.com/w33ble/template-node-module/commit/d1915ac50d8df4a2c003b5e27ed25458531eae3a)
 - fix: quotes on eslint command [`3e05fbf`](https://github.com/w33ble/template-node-module/commit/3e05fbfcd630f6533e992ff6be7eb757db65cfcb)
@@ -61,4 +67,3 @@
 - add git ignore [`46020a1`](https://github.com/w33ble/template-node-module/commit/46020a1dfc4795361bb0553227da6ce154e21317)
 - remove copyrightYear prompt [`fc36ec6`](https://github.com/w33ble/template-node-module/commit/fc36ec65a8c63fa462efc1d446ef7306a91c381c)
 - initial checking of working template [`2060271`](https://github.com/w33ble/template-node-module/commit/2060271c4867e99270c3e544f4b7cb082f0340a7)
-
