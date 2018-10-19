@@ -57,6 +57,11 @@ module.exports = {
       ],
       default: 'tapped',
     },
+    docker: {
+      type: 'confirm',
+      message: 'Include a Dockerfile?',
+      default: true,
+    }
   },
   filters: {
     'src/index.js': '!esm',
@@ -64,6 +69,8 @@ module.exports = {
     'test/index.js': 'tests !== "none" && !esm',
     'test/index.mjs': 'tests !== "none" && esm',
     'index.mjs': 'esm',
+    'Dockerfile': 'docker',
+    '.dockerignore': 'docker',
   },
   installDependencies: true,
   gitInit: true,
