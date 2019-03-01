@@ -1,5 +1,8 @@
 ### Changelog
 
+#### [v1.4.0](https://github.com/w33ble/template-node-module/compare/v1.3.0...v1.4.0) (1 March 2019)
+- feat: make esm disabled by default [`3233be5`](https://github.com/w33ble/template-node-module/commit/3233be5b080e0b1eb3a0d30ef57438f9033836c9)
+
 #### [v1.3.0](https://github.com/w33ble/template-node-module/compare/v1.2.0...v1.3.0) (19 October 2018)
 - Feat: Add Dockerfile to output [`#6`](https://github.com/w33ble/template-node-module/pull/6)
 
