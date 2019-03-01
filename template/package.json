@@ -19,7 +19,6 @@
     "test": "npm run lint && node <% if (esm) { %>-r esm test/index.mjs<% } else { %>test/index.js<% } %>",
     "test:only": "node <% if (esm) { %>-r esm test/index.mjs<% } else { %>test/index.js<% } %>",<% } if (buildTarget !== 'none') { %>
     "build": "rimraf lib && babel --out-dir lib --ignore __tests__ src", <% } %>
-    "precommit": "lint-staged",
     "version": "npm-auto-version",
     "start": "node ."
   },
@@ -53,6 +52,11 @@
       ]
     ]
   },<% } %>
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "ignore": [
       "package.json"
@@ -75,11 +79,11 @@
     "cjs": true
   },<% } %>
   "dependencies": {<% if (esm) { %>
-    "esm": "^3.0.17"
+    "esm": "^3.2.7"
   <% } %>},
   "devDependencies": {
     "@w33ble/npm-auto-tools": "*",<% if (tests === 'ava') { %>
-    "ava": "^0.23.0",<% } %><% if (tests === 'tapped') { %>
+    "ava": "^1.2.1",<% } %><% if (tests === 'tapped') { %>
     "tapped": "^0.1.0",<% } %><% if (buildTarget !== 'none') { %>
     "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.6.0",
@@ -88,13 +92,13 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.3.1",
     "eslint-plugin-import": "^2.7.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.0.4",<% if (airbnb) { %>
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.4",<% if (airbnb) { %>
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.1.0",<% } if (tests !== 'none') { %>
-    "codecov": "^3.0.0",
-    "nyc": "^11.2.1",<% } %>
-    "prettier": "^1.9.0"
+    "codecov": "^3.1.0",
+    "nyc": "^13.3.0",<% } %>
+    "prettier": "^1.16.4"
   }
 }
