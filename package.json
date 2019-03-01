@@ -4,8 +4,7 @@
   "private": true,
   "description": "sao template for new node modules",
   "scripts": {
-    "test": "ava sao.test.js",
-    "test:dev": "ava -w sao.test.js",
+    "test": "node sao.test.js",
     "version": "npm-auto-version"
   },
   "repository": {
@@ -22,7 +21,6 @@
   "dependencies": {},
   "devDependencies": {
     "@w33ble/npm-auto-tools": "*",
-    "ava": "^0.19.1",
     "sao": "^0.19.3"
   }
 }

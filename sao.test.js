@@ -1,14 +1,49 @@
 const { resolve } = require("path");
-const test = require("ava");
+const assert = require("assert");
 const sao = require("sao");
 
 const template = {
   fromPath: resolve(".")
 };
 
+const test = (() => {
+  const queue = [];
+
+  function test(name, fn) {
+    if (queue[name]) throw new Error(`Test with name '${name}' exists`);
+    queue[name] = fn;
+  }
+
+  test.exec = async function testExec() {
+    const entries = Object.entries(queue);
+
+    return Promise.all(entries.map(([name, fn]) => {
+      return Promise.resolve(fn())
+      .then(res => {
+        console.log(`PASSED: ${name}`);
+      })
+      .catch(e => {
+        console.log(`FAILED: ${name}`);
+        throw e;
+      });
+    }))
+    .then(() => {
+      console.log('ALL TESTS PASSED');
+      process.exit(0);
+    })
+    .catch((e) => {
+      console.error(e);
+      console.error('TESTS FAILED');
+      process.exit(1);
+    })
+  }
+
+  return test;
+})();
+
 const getPkg = res => JSON.parse(res.files["package.json"].contents.toString());
 
-test("copyright has correct info", t => {
+test("copyright has correct info", () => {
   return sao
     .mockPrompt(template, {
       username: "someuser",
@@ -18,94 +53,94 @@ test("copyright has correct info", t => {
       const thisYear = new Date().getFullYear();
       const content = res.files["LICENSE"].contents.toString();
       const headerText = content.match(/Copyright(.*)/)[1];
-      t.not(headerText.indexOf(thisYear), -1);
-      t.not(headerText.indexOf("github.com/someuser"), -1);
-      t.not(headerText.indexOf("Some User"), -1);
+      assert.notEqual(headerText.indexOf(thisYear), -1);
+      assert.notEqual(headerText.indexOf("github.com/someuser"), -1);
+      assert.notEqual(headerText.indexOf("Some User"), -1);
     });
 });
 
-test("no test setup when none is selected", t => {
+test("no test setup when none is selected", () => {
   return sao
     .mockPrompt(template, {
       tests: "none"
     })
     .then(res => {
       const pkg = getPkg(res);
-      t.is(pkg.scripts["report-coverage"], undefined);
-      t.is(pkg.scripts["test"], undefined);
-      t.is(pkg.scripts["test:dev"], undefined);
-      t.is(pkg.devDependencies.codecov, undefined);
-      t.is(pkg.devDependencies.nyc, undefined);
+      assert.equal(pkg.scripts["report-coverage"], undefined);
+      assert.equal(pkg.scripts["test"], undefined);
+      assert.equal(pkg.scripts["test:dev"], undefined);
+      assert.equal(pkg.devDependencies.codecov, undefined);
+      assert.equal(pkg.devDependencies.nyc, undefined);
     });
 });
 
-test("coverage reporting when ava is selected", t => {
+test("coverage reporting when ava is selected", () => {
   return sao
     .mockPrompt(template, {
       tests: "ava"
     })
     .then(res => {
       const pkg = getPkg(res);
-      t.not(pkg.scripts["report-coverage"], undefined);
-      t.not(pkg.scripts["test"], undefined);
-      t.not(pkg.scripts["test:dev"], undefined);
-      t.not(pkg.devDependencies.codecov, undefined);
-      t.not(pkg.devDependencies.nyc, undefined);
+      assert.notEqual(pkg.scripts["report-coverage"], undefined);
+      assert.notEqual(pkg.scripts["test"], undefined);
+      assert.notEqual(pkg.scripts["test:dev"], undefined);
+      assert.notEqual(pkg.devDependencies.codecov, undefined);
+      assert.notEqual(pkg.devDependencies.nyc, undefined);
     });
 });
 
-test("ava is included when selected", t => {
+test("ava is included when selected", () => {
   return sao
     .mockPrompt(template, {
       tests: "ava"
     })
     .then(res => {
       const pkg = getPkg(res);
-      t.not(pkg.scripts["test"].indexOf("ava"), -1);
-      t.is(pkg.scripts["test"].indexOf("build"), -1);
-      t.not(pkg.scripts["test:only"].indexOf("ava"), -1);
-      t.not(pkg.scripts["test:dev"].indexOf("ava"), -1);
-      t.not(pkg.devDependencies.ava, undefined);
+      assert.notEqual(pkg.scripts["test"].indexOf("ava"), -1);
+      assert.equal(pkg.scripts["test"].indexOf("build"), -1);
+      assert.notEqual(pkg.scripts["test:only"].indexOf("ava"), -1);
+      assert.notEqual(pkg.scripts["test:dev"].indexOf("ava"), -1);
+      assert.notEqual(pkg.devDependencies.ava, undefined);
     });
 });
 
-test("tapped is included when selected", t => {
+test("tapped is included when selected", () => {
   return sao
     .mockPrompt(template, {
       tests: "tapped"
     })
     .then(res => {
       const pkg = getPkg(res);
-      t.not(pkg.scripts["test"].indexOf("node"), -1);
-      t.is(pkg.scripts["test"].indexOf("build"), -1);
-      t.not(pkg.scripts["test:only"].indexOf("node"), -1);
-      t.not(pkg.devDependencies.tapped, undefined);
+      assert.notEqual(pkg.scripts["test"].indexOf("node"), -1);
+      assert.equal(pkg.scripts["test"].indexOf("build"), -1);
+      assert.notEqual(pkg.scripts["test:only"].indexOf("node"), -1);
+      assert.notEqual(pkg.devDependencies.tapped, undefined);
     });
 });
 
-test("includes test without esm", t => {
+test("includes test without esm", () => {
   return sao
     .mockPrompt(template, {
       esm: false,
       tests: "not none"
     })
     .then(res => {
-      t.truthy(res.files["test/index.js"]);
+      assert.ok(res.files["test/index.js"]);
     });
 });
 
-test("includes test with esm", t => {
+test("includes test with esm", () => {
   return sao
     .mockPrompt(template, {
       esm: true,
       tests: "not none"
     })
     .then(res => {
-      t.truthy(res.files["test/index.mjs"]);
+      assert.ok(res.files["test/index.mjs"]);
     });
 });
 
-test("no babel build when none is selected", t => {
+test("no babel build when none is selected", () => {
   return sao
     .mockPrompt(template, {
       buildTarget: "none",
@@ -114,14 +149,14 @@ test("no babel build when none is selected", t => {
     .then(res => {
       const pkg = getPkg(res);
       // no babel config
-      t.is(pkg.babel, undefined);
+      assert.equal(pkg.babel, undefined);
       // no build script
-      t.is(pkg.scripts["build"], undefined);
-      t.is(pkg.scripts["test"].indexOf("npm run build"), -1);
+      assert.equal(pkg.scripts["build"], undefined);
+      assert.equal(pkg.scripts["test"].indexOf("npm run build"), -1);
     });
 });
 
-test("includes babel build when selected", t => {
+test("includes babel build when selected", () => {
   const findEnvPreset = presets =>
     presets.find(preset => preset === "env" || preset[0] === "env");
 
@@ -133,34 +168,36 @@ test("includes babel build when selected", t => {
     .then(res => {
       const pkg = getPkg(res);
       // includes babel config
-      t.not(pkg.babel, undefined);
+      assert.notEqual(pkg.babel, undefined);
       const config = findEnvPreset(pkg.babel.presets)[1];
-      t.is(config.targets.node, "6");
+      assert.equal(config.targets.node, "6");
       // includes build scripts
-      t.not(pkg.scripts["build"], undefined);
-      t.not(pkg.scripts["test"].indexOf("npm run build"), -1);
-      t.not(pkg.scripts["test:only"].indexOf("npm run build"), -1);
+      assert.notEqual(pkg.scripts["build"], undefined);
+      assert.notEqual(pkg.scripts["test"].indexOf("npm run build"), -1);
+      assert.notEqual(pkg.scripts["test:only"].indexOf("npm run build"), -1);
     });
 });
 
-test("includes Dockerfile when selected", t => {
+test("includes Dockerfile when selected", () => {
   return sao
     .mockPrompt(template, {
       docker: true,
     })
     .then(res => {
-      t.truthy(res.files["Dockerfile"]);
-      t.truthy(res.files[".dockerignore"]);
+      assert.ok(res.files["Dockerfile"]);
+      assert.ok(res.files[".dockerignore"]);
     });
 })
 
-test("skips Dockerfile when not selected", t => {
+test("skips Dockerfile when not selected", () => {
   return sao
     .mockPrompt(template, {
       docker: false,
     })
     .then(res => {
-      t.is(res.files["Dockerfile"], undefined);
-      t.is(res.files[".dockerignore"], undefined);
+      assert.equal(res.files["Dockerfile"], undefined);
+      assert.equal(res.files[".dockerignore"], undefined);
     });
 })
+
+test.exec();
