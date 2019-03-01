@@ -29,7 +29,7 @@ module.exports = {
     esm: {
       type: 'confirm',
       message: 'Include runtime es6 module support?',
-      default: true,
+      default: false,
     },
     airbnb: {
       type: 'confirm',
