@@ -1,5 +1,8 @@
 ### Changelog
 
+#### [v1.5.0](https://github.com/w33ble/template-node-module/compare/v1.4.0...v1.5.0) (13 March 2019)
+- feat: auto-save lint fixes [`7b51c29`](https://github.com/w33ble/template-node-module/commit/7b51c29b3cbef776481d39afe3e416b746b16c28)
+
 #### [v1.4.0](https://github.com/w33ble/template-node-module/compare/v1.3.0...v1.4.0) (1 March 2019)
 - feat: make esm disabled by default [`3233be5`](https://github.com/w33ble/template-node-module/commit/3233be5b080e0b1eb3a0d30ef57438f9033836c9)
 
