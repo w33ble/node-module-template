@@ -63,7 +63,8 @@
     ],
     "linters": {
       "*.{js,mjs}": [
-        "eslint --fix"
+        "eslint --fix",
+        "git add"
       ],
       "*.{js,mjs,json,css}": [
         "prettier --write"
