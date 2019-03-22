@@ -4,7 +4,7 @@
   "private": true,
   "description": "sao template for new node modules",
   "scripts": {
-    "test": "node sao.test.js",
+    "test": "node test/index.js",
     "version": "npm-auto-version"
   },
   "repository": {
