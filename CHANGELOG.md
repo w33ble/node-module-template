@@ -1,5 +1,11 @@
 ### Changelog
 
+#### [v1.6.0](https://github.com/w33ble/template-node-module/compare/v1.5.0...v1.6.0) (22 March 2019)
+- fix: linting passes after setup [`25f4ec2`](https://github.com/w33ble/template-node-module/commit/25f4ec2b443137c35f667d631902b8f4c43ac99a)
+- feat: default to no test runner [`18c73b0`](https://github.com/w33ble/template-node-module/commit/18c73b00859965e0f9c9d7adda6350cc527c74fd)
+- feat: default to node 8, add 10 as a transpilation target [`02b890c`](https://github.com/w33ble/template-node-module/commit/02b890ccccd2a9c5ac870555475e9cbadb223fbc)
+- fix: linting error [`a1ac1e8`](https://github.com/w33ble/template-node-module/commit/a1ac1e8d1eef682fb72a03e637ab26f5ebdce7cc)
+
 #### [v1.5.0](https://github.com/w33ble/template-node-module/compare/v1.4.0...v1.5.0) (13 March 2019)
 - feat: auto-save lint fixes [`7b51c29`](https://github.com/w33ble/template-node-module/commit/7b51c29b3cbef776481d39afe3e416b746b16c28)
 
