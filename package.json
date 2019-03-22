@@ -21,6 +21,6 @@
   "dependencies": {},
   "devDependencies": {
     "@w33ble/npm-auto-tools": "*",
-    "sao": "^0.22.17"
+    "sao": "^1.6.1"
   }
 }
