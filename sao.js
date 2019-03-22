@@ -52,11 +52,11 @@ module.exports = {
       type: 'list',
       message: 'Choose your test runner:',
       choices: [
+        'none',
         'tapped',
         'ava',
-        'none',
       ],
-      default: 'tapped',
+      default: 'none',
     },
     docker: {
       type: 'confirm',
