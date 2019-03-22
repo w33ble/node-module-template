@@ -24,7 +24,7 @@ module.exports = {
     },
     nodeVersion: {
       message: 'What node version are you targetting?',
-      default: '6',
+      default: '8',
     },
     esm: {
       type: 'confirm',
@@ -44,6 +44,7 @@ module.exports = {
         '4',
         '6',
         '8',
+        '10',
       ],
       default: 'none',
     },
