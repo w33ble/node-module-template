@@ -1,5 +1,8 @@
 ### Changelog
 
+#### [v2.1.0](https://github.com/w33ble/template-node-module/compare/v2.0.0...v2.1.0) (5 April 2019)
+- feat: always include a test script [`100a993`](https://github.com/w33ble/template-node-module/commit/100a9939dcfa4c3b0b7d149fc22dae7feb7e6245)
+
 ### [v2.0.0](https://github.com/w33ble/template-node-module/compare/v1.6.0...v2.0.0) (22 March 2019)
 - feat: upgrade to sao 1 [`eee9370`](https://github.com/w33ble/template-node-module/commit/eee9370bb7e8aadeabc73efba7c11a0a8613d269)
 - **Breaking:** feat: convert sao config to v1 [`87cffd4`](https://github.com/w33ble/template-node-module/commit/87cffd48deb50f4af152017b9f75a4adbd755441)
