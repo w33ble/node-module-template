@@ -18,7 +18,8 @@
     "test:only": "npm run build && <% if (esm) { %>-r esm test/index.mjs<% } else { %>test/index.js<% } %>",<% } if (tests === 'tapped' && buildTarget === 'none') { %>
     "test": "npm run lint && node <% if (esm) { %>-r esm test/index.mjs<% } else { %>test/index.js<% } %>",
     "test:only": "node <% if (esm) { %>-r esm test/index.mjs<% } else { %>test/index.js<% } %>",<% } if (buildTarget !== 'none') { %>
-    "build": "rimraf lib && babel --out-dir lib --ignore __tests__ src", <% } %>
+    "build": "rimraf lib && babel --out-dir lib --ignore __tests__ src", <% } if (tests === 'none') { %>
+    "test": "npm run lint", <% } %>
     "version": "npm-auto-version",
     "start": "node ."
   },

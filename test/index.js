@@ -30,14 +30,14 @@ test('copyright has correct info', async () => {
   assert.notEqual(headerText.indexOf('Some User'), -1);
 });
 
-test('no test setup when none is selected', async () => {
+test('only lint when none is selected', async () => {
   const res = await getOutput({
     tests: 'none'
   })
 
   const pkg = await getPkg(res);
   assert.equal(pkg.scripts['report-coverage'], undefined);
-  assert.equal(pkg.scripts['test'], undefined);
+  assert.equal(pkg.scripts['test'], 'npm run lint');
   assert.equal(pkg.scripts['test:dev'], undefined);
   assert.equal(pkg.devDependencies.codecov, undefined);
   assert.equal(pkg.devDependencies.nyc, undefined);
